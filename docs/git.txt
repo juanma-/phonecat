@@ -7,3 +7,12 @@ git add -A
 
 Subir los cambios al HEAD
 git commit -m "Commit message"
+
+Subir los cambios al repositorio remoto
+git push origin master
+
+Refrescar el repositorio local 
+git pull
+
+Ver los cambios entre el index y el HEAD
+git status
