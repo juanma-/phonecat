@@ -26,11 +26,20 @@ flyway {
     locations=['filesystem:./db/migration']
 }
 
+ext.buildDir = new File(rootDir, 'build')
 ext.confDir = new File(rootDir, 'config')
 
 allprojects {
 }
 
 subprojects{
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
+
+task clean(type: Delete) {
+    delete("$buildDir")
 }
 
