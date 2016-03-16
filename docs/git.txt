@@ -1,0 +1,9 @@
+Clonar el repositorio de github
+git clone https://github.com/juanma-/phonecat.git
+
+Añadir los cambios al index
+git add . 
+git add -A
+
+Subir los cambios al HEAD
+git commit -m "Commit message"
