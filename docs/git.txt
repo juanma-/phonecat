@@ -14,5 +14,5 @@ git push origin master
 Refrescar el repositorio local 
 git pull
 
-Ver los cambios entre el index y el HEAD
+Ver los cambios entre el directorio de trabajo, el index (stage) y el HEAD.
 git status
