@@ -29,17 +29,18 @@ flyway {
 ext.buildDir = new File(rootDir, 'build')
 ext.confDir = new File(rootDir, 'config')
 
-allprojects {
-}
-
-subprojects{
-}
-
 task wrapper(type: Wrapper) {
     gradleVersion = '2.12'
 }
 
-task clean(type: Delete) {
+task clean {
     delete("$buildDir")
+    subprojects.each {
+        it.afterEvaluate {
+            def cleanTask = it.tasks.findByName('clean')
+            if (cleanTask) {
+                dependsOn(cleanTask)
+            }
+        }
+    }
 }
-
