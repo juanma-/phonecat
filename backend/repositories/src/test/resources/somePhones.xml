@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <PHONE ID="1" EXTERNALID="phone-1" NAME="Phone 1" SNIPPET="Phone 1 snippet.... " CREATEDDATE="2016-01-10 18:02:55.812"/>
+  <PHONE ID="2" EXTERNALID="phone-2" NAME="Phone 2" SNIPPET="Phone 2 snippet.... " CREATEDDATE="2016-01-11 18:22:53.18"/>
+  <PHONE ID="3" EXTERNALID="phone-3" NAME="Phone 3" SNIPPET="Phone 3 snippet.... " CREATEDDATE="2016-01-02 18:23:08.97"/>
+</dataset>

@@ -18,15 +18,19 @@ dependencies {
     runtime 'javax.transaction:jta:1.1'
     runtime 'org.jadira.usertype:usertype.core:5.0+'
     runtime 'org.springframework:spring-aspects:4.1+'
+    runtime 'org.slf4j:slf4j-simple:1.7+'
 
     compile project(':backend:contracts/external')
+    compile 'javax.inject:javax.inject:1'
     compile 'org.springframework.data:spring-data-jpa:1.9+'
     compile 'org.hibernate:hibernate-entitymanager:5.0+'
 
     testCompile 'org.springframework:spring-test:4.1+'
     testCompile 'com.github.springtestdbunit:spring-test-dbunit:1.2+'
     testCompile 'org.flywaydb:flyway-core:3.2.1'
+    testCompile 'junit:junit:4.12+'
     //testCompile 'com.zaxxer:HikariCP:2.4+'
     testCompile 'org.dbunit:dbunit:2.4.9'
+    testCompile 'com.h2database:h2:1.4+'
 }
 

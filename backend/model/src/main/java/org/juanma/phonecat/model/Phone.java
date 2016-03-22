@@ -1,14 +1,25 @@
 package org.juanma.phonecat.model;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.DateTime;
+
+import javax.persistence.*;
+
 /**
  * Created by Juan Manuel Castillo on 20/12/15.
  * Phone
  */
-public abstract class Phone {
-  private Long   id;
+@Entity
+public class Phone {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
   private String externalId;
   private String name;
   private String snippet;
+  @Temporal(TemporalType.TIMESTAMP)
+  @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+  private DateTime createdDate;
 
   public Long getId() {
     return id;
@@ -42,6 +53,18 @@ public abstract class Phone {
     this.snippet = snippet;
   }
 
+  public DateTime getCreatedDate() {
+    return createdDate;
+  }
+
+  public void setCreatedDate(DateTime createdDate) {
+    this.createdDate = createdDate;
+  }
+
+  public boolean isNew() {
+    return null == id;
+  }
+
   @Override
   public int hashCode() {
     return externalId.hashCode();
@@ -60,6 +83,6 @@ public abstract class Phone {
 
   @Override
   public String toString() {
-    return "Phone[" + getExternalId() + "]";
+    return "Phone" + (isNew() ? "" : "@" + id) + "[" + externalId + "]";
   }
 }
