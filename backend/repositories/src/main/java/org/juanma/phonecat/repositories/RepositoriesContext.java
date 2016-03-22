@@ -48,6 +48,7 @@ public class RepositoriesContext {
     //If the value of this property is true, Hibernate will format the SQL that is written to the
     // console.
     jpaProperties.put("hibernate.format_sql", env.getRequiredProperty("hibernate.format_sql"));
+    jpaProperties.put("jadira.usertype.autoRegisterUserTypes", "true");
     emf.setJpaProperties(jpaProperties);
 
     return emf;

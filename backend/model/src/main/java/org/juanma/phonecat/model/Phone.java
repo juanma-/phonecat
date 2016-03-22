@@ -1,6 +1,5 @@
 package org.juanma.phonecat.model;
 
-import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
@@ -14,11 +13,13 @@ public class Phone {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
+  @Column
   private String externalId;
+  @Column
   private String name;
+  @Column
   private String snippet;
-  @Temporal(TemporalType.TIMESTAMP)
-  @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+  @Column
   private DateTime createdDate;
 
   public Long getId() {

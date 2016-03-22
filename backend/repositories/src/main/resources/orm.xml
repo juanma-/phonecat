@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+<!--
+    <package>org.juanma.phonecat.model</package>
+    <entity class="Phone">
+        <table name="phone" />
+        <attributes>
+            <id name="id">
+                <sequence-generator name="AUTO"/>
+            </id>
+            <basic name="externalId">
+                <column name="externalId" length="100" updatable="false" />
+            </basic>
+            <basic name="name">
+                <column name="name" length="100" updatable="false" />
+            </basic>
+            <basic name="snippet">
+                <column name="snippet" length="200" />
+            </basic>
+            <basic name="createdDate">
+                <column name="createdDate" />
+            </basic>
+        </attributes>
+    </entity>
+-->
+</entity-mappings>

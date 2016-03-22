@@ -10,6 +10,6 @@ import java.util.stream.Stream;
  */
 public interface PhoneRepository extends org.juanma.phonecat.contracts.external.PhoneRepository,
     Repository<Phone, Long>{
-  @Override
-  Stream<Phone> findAllByOrderByCreatedDateDesc();
+//  @Override
+//  Stream<Phone> findAllByOrderByCreatedDateDesc();
 }

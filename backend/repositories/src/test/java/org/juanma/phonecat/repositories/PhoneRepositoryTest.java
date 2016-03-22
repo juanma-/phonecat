@@ -32,8 +32,7 @@ public class PhoneRepositoryTest {
 
   @Test
   public void findAllByOrderByCreatedDateDesc_NoPhones_Empty() throws Exception {
-    //FIXME IDE tiene que tener un error aquí.. por que no tiene sentido.
-    List<?> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(
+    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(
         Collectors.toList());
 
     Assert.assertTrue(phones.isEmpty());
@@ -43,8 +42,8 @@ public class PhoneRepositoryTest {
   @Transactional
   @DatabaseSetup("classpath:uniquePhone.xml")
   public void findAllByOrderByNewer_UniquePhone_OnlyOne() throws Exception {
-    //FIXME IDE tiene que tener un error aquí.. por que no tiene sentido.
-    List<?> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(Collectors.toList());
+    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(
+        Collectors.toList());
 
     Assert.assertEquals(1, phones.size());
   }
@@ -53,8 +52,8 @@ public class PhoneRepositoryTest {
   @Transactional
   @DatabaseSetup("classpath:somePhones.xml")
   public void findAllByOrderByNewer_SomePhones_NewerFirst() throws Exception {
-    //FIXME IDE tiene que tener un error aquí.. por que no tiene sentido.
-    List<?> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(Collectors.toList());
+    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(
+        Collectors.toList());
 
     Assert.assertEquals(3, phones.size());
     //Newer
