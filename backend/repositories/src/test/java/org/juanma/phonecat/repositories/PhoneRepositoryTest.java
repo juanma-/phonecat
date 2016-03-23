@@ -32,8 +32,8 @@ public class PhoneRepositoryTest {
 
   @Test
   public void findAllByOrderByCreatedDateDesc_NoPhones_Empty() throws Exception {
-    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(
-        Collectors.toList());
+    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc()
+        .collect(Collectors.toList());
 
     Assert.assertTrue(phones.isEmpty());
   }
@@ -41,9 +41,9 @@ public class PhoneRepositoryTest {
   @Test
   @Transactional
   @DatabaseSetup("classpath:uniquePhone.xml")
-  public void findAllByOrderByNewer_UniquePhone_OnlyOne() throws Exception {
-    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(
-        Collectors.toList());
+  public void findAllByOrderByCreatedDateDesc_UniquePhone_OnlyOne() throws Exception {
+    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc()
+        .collect(Collectors.toList());
 
     Assert.assertEquals(1, phones.size());
   }
@@ -51,14 +51,14 @@ public class PhoneRepositoryTest {
   @Test
   @Transactional
   @DatabaseSetup("classpath:somePhones.xml")
-  public void findAllByOrderByNewer_SomePhones_NewerFirst() throws Exception {
-    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc().collect(
-        Collectors.toList());
+  public void findAllByOrderByCreatedDateDesc_SomePhones_NewerFirst() throws Exception {
+    List<Phone> phones = phoneRepository.findAllByOrderByCreatedDateDesc()
+        .collect(Collectors.toList());
 
     Assert.assertEquals(3, phones.size());
-    //Newer
+    //Newest
     Assert.assertEquals("phone-2", ((Phone) phones.get(0)).getExternalId());
-    //Older
+    //Oldest
     Assert.assertEquals("phone-3", ((Phone)phones.get(2)).getExternalId());
   }
 }
