@@ -6,18 +6,19 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * user guide available at https://docs.gradle.org/2.12/userguide/tutorial_java_projects.html
  */
+subprojects {
+  apply plugin: 'java'
 
-
-/*
-apply plugin: 'java'
-
-repositories {
+  repositories {
     jcenter()
-}
+  }
 
-dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.18'
+  dependencies {
+    runtime 'org.slf4j:slf4j-simple:1.7+'
+    
+    compile 'javax.inject:javax.inject:1'
+    compile 'org.slf4j:slf4j-api:1.7+'
 
     testCompile 'junit:junit:4.12'
+  }
 }
-*/

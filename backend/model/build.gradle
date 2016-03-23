@@ -7,13 +7,6 @@
  * user guide available at https://docs.gradle.org/2.12/userguide/tutorial_java_projects.html
  */
 
-
-apply plugin: 'java'
-
-repositories {
-    jcenter()
-}
-
 dependencies {
     compile 'joda-time:joda-time:2.9+'
     compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0+'
