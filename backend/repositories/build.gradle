@@ -9,7 +9,6 @@
 
 dependencies {
     runtime 'javax.transaction:jta:1.1'
-    runtime 'org.jadira.usertype:usertype.core:5.0+'
     runtime 'org.springframework:spring-aspects:4.1+'
 
     compile project(':backend:contracts/external')

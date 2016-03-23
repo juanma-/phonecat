@@ -1,8 +1,7 @@
 package org.juanma.phonecat.model;
 
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * Created by Juan Manuel Castillo on 20/12/15.
@@ -20,7 +19,7 @@ public class Phone {
   @Column
   private String snippet;
   @Column
-  private DateTime createdDate;
+  private LocalDateTime createdDate;
 
   public Long getId() {
     return id;
@@ -54,11 +53,11 @@ public class Phone {
     this.snippet = snippet;
   }
 
-  public DateTime getCreatedDate() {
+  public LocalDateTime getCreatedDate() {
     return createdDate;
   }
 
-  public void setCreatedDate(DateTime createdDate) {
+  public void setCreatedDate(LocalDateTime createdDate) {
     this.createdDate = createdDate;
   }
 

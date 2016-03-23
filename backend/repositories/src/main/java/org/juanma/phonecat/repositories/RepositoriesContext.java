@@ -37,7 +37,7 @@ public class RepositoriesContext {
     emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
     emf.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
     //emf.setMappingResources("orm.xml");
-    emf.setPackagesToScan("org.juanma.phonecat.model");
+    emf.setPackagesToScan("org.juanma.phonecat.model", "org.springframework.data.jpa.convert.threeten");
 
     Properties jpaProperties = new Properties();
     //Configures the used database dialect. This allows Hibernate to create SQL that is optimized
@@ -48,7 +48,7 @@ public class RepositoriesContext {
     //If the value of this property is true, Hibernate will format the SQL that is written to the
     // console.
     jpaProperties.put("hibernate.format_sql", env.getRequiredProperty("hibernate.format_sql"));
-    jpaProperties.put("jadira.usertype.autoRegisterUserTypes", "true");
+
     emf.setJpaProperties(jpaProperties);
 
     return emf;
