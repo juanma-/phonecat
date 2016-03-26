@@ -14,5 +14,7 @@ include 'backend:contracts/external'
 include 'backend:contracts/delivery'
 include 'backend:repositories'
 include 'backend:usecase'
+include 'backend:controllers'
+include 'backend:war'
 
 rootProject.name = 'phonecat'
