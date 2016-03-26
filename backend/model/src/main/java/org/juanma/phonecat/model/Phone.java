@@ -1,25 +1,27 @@
 package org.juanma.phonecat.model;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
  * Created by Juan Manuel Castillo on 20/12/15.
  * Phone
  */
-@Entity
+//@Entity
 public class Phone {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+//  @Id
+//  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
-  @Column
+//  @Column
   private String externalId;
-  @Column
+//  @Column
   private String name;
-  @Column
+//  @Column
   private String snippet;
-  @Column
+//  @Column
   private LocalDateTime createdDate;
+
+  public Phone() {}
 
   public Long getId() {
     return id;
@@ -61,9 +63,9 @@ public class Phone {
     this.createdDate = createdDate;
   }
 
-  public boolean isNew() {
-    return null == id;
-  }
+//  public boolean isNew() {
+//    return null == id;
+//  }
 
   @Override
   public int hashCode() {
@@ -83,6 +85,6 @@ public class Phone {
 
   @Override
   public String toString() {
-    return "Phone" + (isNew() ? "" : "@" + id) + "[" + externalId + "]";
+    return "Phone" + (id == null ? "" : "@" + id) + "[" + externalId + "]";
   }
 }

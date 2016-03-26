@@ -57,8 +57,8 @@ public class PhoneRepositoryTest {
 
     Assert.assertEquals(3, phones.size());
     //Newest
-    Assert.assertEquals("phone-2", ((Phone) phones.get(0)).getExternalId());
+    Assert.assertEquals("phone-2", phones.get(0).getExternalId());
     //Oldest
-    Assert.assertEquals("phone-3", ((Phone)phones.get(2)).getExternalId());
+    Assert.assertEquals("phone-3", phones.get(2).getExternalId());
   }
 }

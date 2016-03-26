@@ -35,9 +35,10 @@ public class RepositoriesContext {
     LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
     emf.setDataSource(dataSource);
     emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-    emf.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
-    //emf.setMappingResources("orm.xml");
-    emf.setPackagesToScan("org.juanma.phonecat.model", "org.springframework.data.jpa.convert.threeten");
+    //emf.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
+    emf.setMappingResources("orm.xml");
+    emf.setPackagesToScan(//"org.juanma.phonecat.model",
+        "org.springframework.data.jpa.convert.threeten");
 
     Properties jpaProperties = new Properties();
     //Configures the used database dialect. This allows Hibernate to create SQL that is optimized
