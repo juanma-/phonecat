@@ -2,7 +2,7 @@ package org.juanma.phonecat.usecase;
 
 import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
 import org.juanma.phonecat.contracts.external.PhoneRepository;
-import org.juanma.phonecat.requestmodel.PhoneVOImpl;
+import org.juanma.phonecat.responsemodel.PhoneVOImpl;
 
 import javax.inject.Inject;
 import java.util.concurrent.atomic.AtomicInteger;

@@ -1,4 +1,4 @@
-package org.juanma.phonecat.requestmodel;
+package org.juanma.phonecat.responsemodel;
 
 import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
 import org.juanma.phonecat.model.Phone;
