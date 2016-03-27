@@ -1,0 +1,13 @@
+apply plugin: 'war'
+
+archivesBaseName='phonecat-backend'
+
+dependencies {
+    runtime project (':backend:usecase')
+    runtime project (':backend:repositories')
+    runtime 'org.springframework:spring-web:4.+'
+
+    compile project (':backend:controllers')
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.+'
+    compile 'org.jboss.resteasy:resteasy-spring:3.+'
+}

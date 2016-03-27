@@ -21,11 +21,8 @@ import static org.junit.Assert.*;
  */
 @RunWith(MockitoJUnitRunner.class)
 public class PhoneInteractorsTest {
-  @Mock
-  PhoneRepository phoneRepository;
-
-  @InjectMocks
-  PhoneInteractorsImpl phoneInteractors;
+  @Mock static PhoneRepository phoneRepository;
+  @InjectMocks static PhoneInteractorsImpl phoneInteractors = new PhoneInteractorsImpl();
 
 
   @Test
@@ -38,7 +35,7 @@ public class PhoneInteractorsTest {
   }
 
   @Test
-  public void findAllPhones_UniquePhones_OnlyOne() throws Exception {
+  public void findAllPhones_UniquePhone_OnlyOne() throws Exception {
     Mockito.when(phoneRepository.findAllByOrderByCreatedDateDesc())
         .thenReturn(Collections.singletonList(newPhone("unique-phone", "Unique Phone", "..."))
             .stream());

@@ -1,0 +1,11 @@
+dependencies {
+    runtime 'org.jboss.resteasy:resteasy-jackson2-provider:3.0+'
+//    runtime 'com.fasterxml.jackson.core:jackson-core-asl:2.7.0'
+
+    compile project(':backend:contracts/delivery')
+    compile 'org.jboss.resteasy:jaxrs-api:3.0+'
+
+    testCompile 'org.jboss.resteasy:resteasy-jaxrs:3.0+'
+    testCompile 'org.jboss.resteasy:resteasy-client:3.0+'
+    testCompile 'org.jboss.resteasy:tjws:3.0.13+'
+}
