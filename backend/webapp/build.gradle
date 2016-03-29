@@ -3,7 +3,7 @@ apply plugin: 'war'
 archivesBaseName='phonecat-backend'
 
 dependencies {
-    runtime project (':backend:usecase')
+    runtime project (':backend:usecases')
     runtime project (':backend:repositories')
     runtime 'org.springframework:spring-web:4.+'
 

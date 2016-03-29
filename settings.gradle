@@ -13,7 +13,7 @@ include 'backend:model'
 include 'backend:contracts/external'
 include 'backend:contracts/delivery'
 include 'backend:repositories'
-include 'backend:usecase'
+include 'backend:usecases'
 include 'backend:controllers'
 include 'backend:webapp'
 

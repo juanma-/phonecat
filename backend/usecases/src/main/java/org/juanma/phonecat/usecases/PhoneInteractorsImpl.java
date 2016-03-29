@@ -1,4 +1,4 @@
-package org.juanma.phonecat.usecase;
+package org.juanma.phonecat.usecases;
 
 import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
 import org.juanma.phonecat.contracts.external.PhoneRepository;
