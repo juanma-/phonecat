@@ -9,8 +9,8 @@
 
 dependencies {
     compile project(':backend:model')
-    compile project(':backend:contracts/external')
-    compile project(':backend:contracts/delivery')
+    compile project(':backend:contracts_external')
+    compile project(':backend:contracts_delivery')
 
 
 }

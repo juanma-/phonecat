@@ -1,7 +1,12 @@
 package org.juanma.phonecat.controllers;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.Collections;
+
+import javax.ws.rs.core.Response;
+
 import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
-import org.juanma.phonecat.model.Phone;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -10,15 +15,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.Response;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Juan Manuel Castillo on 27/03/16.
@@ -49,8 +45,8 @@ public class PhoneRestControllerTest {
     Response response = server.newRequest("/phones").request().buildGet().invoke();
     assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-    List<PhoneInteractors.PhoneVO> phones =
-        response.readEntity(new GenericType<List<PhoneInteractors.PhoneVO>>() {});
+//    List<PhoneInteractors.PhoneVO> phones =
+//        response.readEntity(new GenericType<List<PhoneInteractors.PhoneVO>>() {});
   }
 
 

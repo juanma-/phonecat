@@ -11,7 +11,7 @@ dependencies {
     runtime 'javax.transaction:jta:1.1'
     runtime 'org.springframework:spring-aspects:4.1+'
 
-    compile project(':backend:contracts/external')
+    compile project(':backend:contracts_external')
     compile 'org.springframework.data:spring-data-jpa:1.9+'
     compile 'org.hibernate:hibernate-entitymanager:5.0+'
 

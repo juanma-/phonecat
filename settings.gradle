@@ -10,8 +10,8 @@
  */
 
 include 'backend:model'
-include 'backend:contracts/external'
-include 'backend:contracts/delivery'
+include 'backend:contracts_external'
+include 'backend:contracts_delivery'
 include 'backend:repositories'
 include 'backend:usecases'
 include 'backend:controllers'

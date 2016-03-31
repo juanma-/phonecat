@@ -5,3 +5,9 @@ build/
 # IDEA
 .idea
 *.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
