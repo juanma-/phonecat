@@ -29,7 +29,7 @@ public class InMemoryRestServer implements AutoCloseable {
     private int port;
 
     private Set<Object> objects = new HashSet<>();
-    private Set<Class> classes = new HashSet<>();
+    private Set<Class<?>> classes = new HashSet<>();
 
     private TJWSEmbeddedJaxrsServer server;
     private SecurityDomain securityDomain;
@@ -73,7 +73,7 @@ public class InMemoryRestServer implements AutoCloseable {
 
         for (Object object : objects) {
             if (object instanceof Class) {
-                classes.add((Class) object);
+                classes.add((Class<?>) object);
             } else {
                 this.objects.add(object);
             }
@@ -102,7 +102,7 @@ public class InMemoryRestServer implements AutoCloseable {
             }
         }
 
-        for (Class resourceOrProvider : classes) {
+        for (Class<?> resourceOrProvider : classes) {
             if (Application.class.isAssignableFrom(resourceOrProvider)) {
                 server.getDeployment().setApplicationClass(resourceOrProvider.getName());
             } else {
