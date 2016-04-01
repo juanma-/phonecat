@@ -11,6 +11,4 @@ public interface PhoneResponse {
   String getSnippet();
 
   String getImageId();
-
-  int getAge();
 }

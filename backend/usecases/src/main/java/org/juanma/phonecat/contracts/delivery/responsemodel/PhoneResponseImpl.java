@@ -9,11 +9,9 @@ public class PhoneResponseImpl implements PhoneResponse {
   private String id;
   private String name;
   private String snippet;
-  private int age;
 
 
-  public PhoneResponseImpl(int age, Phone phone) {
-    this.age = age;
+  public PhoneResponseImpl(Phone phone) {
     this.id = phone.getExternalId();
     this.name = phone.getName();
     this.snippet = phone.getSnippet();
@@ -37,10 +35,5 @@ public class PhoneResponseImpl implements PhoneResponse {
   @Override
   public String getImageId() {
     return this.id + ".0.jpg";
-  }
-
-  @Override
-  public int getAge() {
-    return this.age;
   }
 }

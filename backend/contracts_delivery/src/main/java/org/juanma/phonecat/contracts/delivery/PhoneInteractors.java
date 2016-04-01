@@ -9,5 +9,5 @@ import java.util.stream.Stream;
  */
 public interface PhoneInteractors {
 
-  Stream<PhoneResponse> findAllPhones();
+  Stream<PhoneResponse> findAllPhonesOrderByNewer();
 }

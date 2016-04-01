@@ -26,30 +26,34 @@ public class PhoneInteractorsTest {
 
 
   @Test
-  public void findAllPhones_NoPhones_Empty() throws Exception {
+  public void findAllPhonesByNewer_NoPhones_Empty() throws Exception {
     Mockito.when(phoneRepository.findAllByOrderByCreatedDateDesc())
         .thenReturn(Collections.<Phone>emptyList().stream());
 
-    long phonesCount = phoneInteractors.findAllPhones().count();
+    long phonesCount = phoneInteractors.findAllPhonesOrderByNewer().count();
     assertEquals(0, phonesCount);
   }
 
   @Test
-  public void findAllPhones_UniquePhone_OnlyOne() throws Exception {
+  public void findAllPhonesByNewer_UniquePhone_OnlyOne() throws Exception {
     Mockito.when(phoneRepository.findAllByOrderByCreatedDateDesc())
         .thenReturn(Collections.singletonList(newPhone("unique-phone", "Unique Phone", "..."))
             .stream());
 
     List<PhoneResponse> phones =
-        phoneInteractors.findAllPhones().collect(Collectors.toList());
+        phoneInteractors.findAllPhonesOrderByNewer().collect(Collectors.toList());
 
     assertEquals(1, phones.size());
 
     PhoneResponse phone = phones.get(0);
-    assertEquals(1, phone.getAge());
     assertEquals("unique-phone", phone.getId());
     assertEquals("Unique Phone", phone.getName());
     assertEquals("...", phone.getSnippet());
+  }
+  
+  @Test
+  public void findAllPhonesByNewer_MultiplePhones_OrderList() throws Exception {
+	  fail("The test is not yet implemented. Fixme!!!");
   }
 
   private static Phone newPhone(final String externalId, final String name, final String snippet) {

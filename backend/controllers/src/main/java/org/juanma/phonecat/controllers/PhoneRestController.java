@@ -9,6 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import java.util.Collection;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 /**
@@ -18,14 +19,16 @@ import java.util.stream.Collectors;
 @Path("/phones")
 public class PhoneRestController {
   public static class PhoneRestAdapter {
+	private int age;
     private PhoneResponse phone;
 
-    PhoneRestAdapter(PhoneResponse phone) {
+    PhoneRestAdapter(int age, PhoneResponse phone) {
+      this.age = age;
       this.phone = phone;
     }
 
     public int getAge() {
-      return phone.getAge();
+      return this.age;
     }
 
     public String getId() {
@@ -47,7 +50,11 @@ public class PhoneRestController {
   @GET
   @Produces("application/json")
   public Collection<PhoneRestAdapter> readPhones() {
-    return phoneInteractors.findAllPhones().map(p -> new PhoneRestAdapter(p))
+    AtomicInteger orderCount = new AtomicInteger(1);
+
+
+    return phoneInteractors.findAllPhonesOrderByNewer()
+    	.map(phone -> new PhoneRestAdapter(orderCount.getAndIncrement(), phone))
         .collect(Collectors.toList());
   }
 }
