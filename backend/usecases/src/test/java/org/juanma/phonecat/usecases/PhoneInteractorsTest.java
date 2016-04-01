@@ -1,6 +1,6 @@
 package org.juanma.phonecat.usecases;
 
-import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
+import org.juanma.phonecat.contracts.delivery.responsemodel.PhoneResponse;
 import org.juanma.phonecat.contracts.external.PhoneRepository;
 import org.juanma.phonecat.model.Phone;
 import org.junit.Test;
@@ -40,12 +40,12 @@ public class PhoneInteractorsTest {
         .thenReturn(Collections.singletonList(newPhone("unique-phone", "Unique Phone", "..."))
             .stream());
 
-    List<PhoneInteractors.PhoneVO> phones =
+    List<PhoneResponse> phones =
         phoneInteractors.findAllPhones().collect(Collectors.toList());
 
     assertEquals(1, phones.size());
 
-    PhoneInteractors.PhoneVO phone = phones.get(0);
+    PhoneResponse phone = phones.get(0);
     assertEquals(1, phone.getAge());
     assertEquals("unique-phone", phone.getId());
     assertEquals("Unique Phone", phone.getName());

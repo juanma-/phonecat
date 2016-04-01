@@ -1,19 +1,18 @@
-package org.juanma.phonecat.responsemodel;
+package org.juanma.phonecat.contracts.delivery.responsemodel;
 
-import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
 import org.juanma.phonecat.model.Phone;
 
 /**
  * Created by Juan Manuel Castillo on 26/03/16.
  */
-public class PhoneVOImpl implements PhoneInteractors.PhoneVO {
+public class PhoneResponseImpl implements PhoneResponse {
   private String id;
   private String name;
   private String snippet;
   private int age;
 
 
-  public PhoneVOImpl(int age, Phone phone) {
+  public PhoneResponseImpl(int age, Phone phone) {
     this.age = age;
     this.id = phone.getExternalId();
     this.name = phone.getName();
@@ -33,6 +32,11 @@ public class PhoneVOImpl implements PhoneInteractors.PhoneVO {
   @Override
   public String getSnippet() {
     return this.snippet;
+  }
+
+  @Override
+  public String getImageId() {
+    return this.id + ".0.jpg";
   }
 
   @Override

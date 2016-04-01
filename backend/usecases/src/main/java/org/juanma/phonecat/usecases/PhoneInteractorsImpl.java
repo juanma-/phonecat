@@ -1,8 +1,9 @@
 package org.juanma.phonecat.usecases;
 
 import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
+import org.juanma.phonecat.contracts.delivery.responsemodel.PhoneResponse;
 import org.juanma.phonecat.contracts.external.PhoneRepository;
-import org.juanma.phonecat.responsemodel.PhoneVOImpl;
+import org.juanma.phonecat.contracts.delivery.responsemodel.PhoneResponseImpl;
 
 import javax.inject.Inject;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -16,10 +17,10 @@ public class PhoneInteractorsImpl implements PhoneInteractors {
   PhoneRepository phoneRepository;
 
   @Override
-  public Stream<PhoneVO> findAllPhones() {
+  public Stream<PhoneResponse> findAllPhones() {
     AtomicInteger orderCount = new AtomicInteger(1);
 
     return phoneRepository.findAllByOrderByCreatedDateDesc()
-        .map(phone -> new PhoneVOImpl(orderCount.getAndIncrement(), phone));
+        .map(phone -> new PhoneResponseImpl(orderCount.getAndIncrement(), phone));
   }
 }

@@ -1,6 +1,7 @@
 package org.juanma.phonecat.controllers;
 
 import org.juanma.phonecat.contracts.delivery.PhoneInteractors;
+import org.juanma.phonecat.contracts.delivery.responsemodel.PhoneResponse;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,12 +17,37 @@ import java.util.stream.Collectors;
 @Named
 @Path("/phones")
 public class PhoneRestController {
+  public static class PhoneRestAdapter {
+    private PhoneResponse phone;
+
+    PhoneRestAdapter(PhoneResponse phone) {
+      this.phone = phone;
+    }
+
+    public int getAge() {
+      return phone.getAge();
+    }
+
+    public String getId() {
+      return phone.getId();
+    }
+
+    public String getImageUrl() {
+      return "img/phones/" + phone.getImageId();
+    }
+
+    public String getSnippet() {
+      return phone.getSnippet();
+    }
+  }
+
   @Inject
   private PhoneInteractors phoneInteractors;
 
   @GET
   @Produces("application/json")
-  public Collection<PhoneInteractors.PhoneVO> readPhones() {
-    return phoneInteractors.findAllPhones().collect(Collectors.toList());
+  public Collection<PhoneRestAdapter> readPhones() {
+    return phoneInteractors.findAllPhones().map(p -> new PhoneRestAdapter(p))
+        .collect(Collectors.toList());
   }
 }
