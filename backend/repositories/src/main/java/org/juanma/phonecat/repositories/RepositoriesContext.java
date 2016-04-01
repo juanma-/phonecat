@@ -30,7 +30,7 @@ public class RepositoriesContext {
 
   @Bean
   LocalContainerEntityManagerFactoryBean entityManagerFactory(
-      @SuppressWarnings("SpringJavaAutowiringInspection") DataSource dataSource, Environment env) {
+      DataSource dataSource, Environment env) {
 
     LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
     emf.setDataSource(dataSource);
