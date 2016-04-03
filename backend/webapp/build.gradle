@@ -2,12 +2,15 @@ apply plugin: 'war'
 
 archivesBaseName='phonecat-backend'
 
+
+
 dependencies {
     runtime project (':backend:usecases')
     runtime project (':backend:repositories')
+    runtime 'com.h2database:h2:1.4+'
     runtime 'org.springframework:spring-web:4.+'
 
     compile project (':backend:controllers')
-    compile 'org.jboss.resteasy:resteasy-jaxrs:3.+'
-    compile 'org.jboss.resteasy:resteasy-spring:3.+'
+    compile group:'org.jboss.resteasy', name:'resteasy-jaxrs', version: resteasyVersion
+    compile group:'org.jboss.resteasy', name:'resteasy-spring', version: resteasyVersion
 }
