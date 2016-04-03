@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Created by Juan Manuel Castillo on 16/01/16.
@@ -29,6 +32,27 @@ public class InMemoryFlywayDBContext {
         flyway.setDataSource(dataSource);
         flyway.setLocations("filesystem:../../db/migration");
         flyway.migrate();
+
+        Connection conn = null;
+        Statement statement = null;
+        try {
+            conn = dataSource.getConnection();
+            statement = conn.createStatement();
+            statement.executeUpdate("delete from PHONE");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (statement != null) try {
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            if (conn != null) try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
 
         return dataSource;
     }
