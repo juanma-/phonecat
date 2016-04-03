@@ -1,3 +1,5 @@
+package org.juanma.phonecat.webapp;
+
 import org.juanma.phonecat.controllers.PhoneRestController;
 
 import javax.ws.rs.core.Application;

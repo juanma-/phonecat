@@ -5,6 +5,7 @@ import org.juanma.phonecat.contracts.delivery.responsemodel.PhoneResponse;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -17,6 +18,8 @@ import java.util.stream.Collectors;
  */
 @Named
 @Path("/phones")
+@Consumes({ "application/json" })
+@Produces({ "application/json" })
 public class PhoneRestController {
   public static class PhoneRestAdapter {
 	private int age;
@@ -50,7 +53,7 @@ public class PhoneRestController {
   @GET
   @Produces("application/json")
   public Collection<PhoneRestAdapter> readPhones() {
-    AtomicInteger orderCount = new AtomicInteger(1);
+    AtomicInteger orderCount = new AtomicInteger(0);
 
 
     return phoneInteractors.findAllPhonesOrderByNewer()
