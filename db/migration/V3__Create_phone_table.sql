@@ -2,7 +2,7 @@ CREATE TABLE phone (
   id BIGINT NOT NULL,
   externalId VARCHAR(100) NOT NULL,
   name varchar(100) NOT NULL,
-  snippet varchar(200) NOT NULL,
+  snippet varchar(400) NOT NULL,
   createdBy_id BIGINT,
   createdDate TIMESTAMP,
   lastmodifiedBy_ID BIGINT,
