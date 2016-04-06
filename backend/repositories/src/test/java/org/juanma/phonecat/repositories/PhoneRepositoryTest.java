@@ -4,6 +4,7 @@ package org.juanma.phonecat.repositories;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import org.juanma.phonecat.model.Phone;
+import org.juanma.phonecat.repositories.testutils.DbUnitInMemoryFlywayDbContext;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

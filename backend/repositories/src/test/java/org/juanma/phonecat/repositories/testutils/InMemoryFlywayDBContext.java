@@ -1,4 +1,4 @@
-package org.juanma.phonecat.repositories;
+package org.juanma.phonecat.repositories.testutils;
 
 import org.flywaydb.core.Flyway;
 import org.h2.Driver;

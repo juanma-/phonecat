@@ -1,4 +1,4 @@
-package org.juanma.phonecat.repositories;
+package org.juanma.phonecat.repositories.testutils;
 
 import com.github.springtestdbunit.bean.DatabaseConfigBean;
 import com.github.springtestdbunit.bean.DatabaseDataSourceConnectionFactoryBean;
