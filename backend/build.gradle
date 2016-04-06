@@ -11,7 +11,9 @@ subprojects {
   apply plugin: 'java'
   apply plugin: 'eclipse'
 
-  ext {
+  sourceCompatibility = '1.8'
+  
+  ext {    
     resteasyVersion = '3.0.11.Final'
   }
 
