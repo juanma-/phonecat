@@ -39,10 +39,10 @@ eclipse {
 dependencies {
     runtime project (':backend:usecases')
     runtime project (':backend:repositories')
+    runtime project (':backend:controllers')
     runtime 'com.h2database:h2:1.4+'
     runtime 'org.springframework:spring-web:4.+'
-
-    compile project (':backend:controllers')
+    
     compile group:'org.jboss.resteasy', name:'resteasy-jaxrs', version: resteasyVersion
     compile group:'org.jboss.resteasy', name:'resteasy-spring', version: resteasyVersion
 }
