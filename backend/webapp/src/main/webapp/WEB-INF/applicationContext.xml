@@ -12,7 +12,9 @@
 
     <context:component-scan base-package="org.juanma.phonecat.controllers" />
     <context:component-scan base-package="org.juanma.phonecat.usecases" />
-    <context:component-scan base-package="org.juanma.phonecat.repositories" />
+    <context:component-scan base-package="org.juanma.phonecat.repositories">
+      <context:exclude-filter type="regex" expression=".*\.testutils\..*"/>
+    </context:component-scan>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
         <property name="driverClass" value="${db.driver}"/>
