@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -53,7 +54,20 @@ public class PhoneInteractorsTest {
   
   @Test
   public void findAllPhonesByNewer_MultiplePhones_OrderList() throws Exception {
-	  fail("The test is not yet implemented. Fixme!!!");
+	  Mockito.when(phoneRepository.findAllByOrderByCreatedDateDesc())
+      .thenReturn(Arrays.asList(
+    		  newPhone("phone1", "phone 1", "..."), 
+    		  newPhone("phone2", "phone 2", "..."),
+    		  newPhone("phone3", "phone 3", "..."))
+          .stream());
+	  
+	    List<PhoneResponse> phones =
+	            phoneInteractors.findAllPhonesOrderByNewer().collect(Collectors.toList());
+	    
+	    assertEquals(3, phones.size());
+	    assertEquals("phone1", phones.get(0).getId());
+	    assertEquals("phone2", phones.get(1).getId());
+	    assertEquals("phone3", phones.get(2).getId());
   }
 
   private static Phone newPhone(final String externalId, final String name, final String snippet) {
