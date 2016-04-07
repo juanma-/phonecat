@@ -26,6 +26,7 @@ import java.util.Set;
  */
 
 public class InMemoryRestServer implements AutoCloseable {
+	private static String BIND_ADDRESS = "localhost"; 
     private int port;
 
     private Set<Object> objects = new HashSet<>();
@@ -34,7 +35,6 @@ public class InMemoryRestServer implements AutoCloseable {
     private TJWSEmbeddedJaxrsServer server;
     private SecurityDomain securityDomain;
     private ResteasyClient resteasyClient;
-    private String bindAddress = "localhost";
 
     private InMemoryRestServer(Object... objects) {
 
@@ -91,7 +91,7 @@ public class InMemoryRestServer implements AutoCloseable {
 
         server = new TJWSEmbeddedJaxrsServer();
         server.setPort(port);
-        server.setBindAddress(bindAddress);
+        server.setBindAddress(BIND_ADDRESS);
         server.setSecurityDomain(securityDomain);
 
         for (Object object : objects) {
@@ -117,7 +117,7 @@ public class InMemoryRestServer implements AutoCloseable {
      * @return baseURI (http://localhost:PORT) to the REST server.
      */
     public String baseUri() {
-        return "http://" + bindAddress + ":" + port;
+        return "http://" + BIND_ADDRESS + ":" + port;
     }
 
     /**

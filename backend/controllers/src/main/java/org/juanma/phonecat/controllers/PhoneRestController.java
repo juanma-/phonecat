@@ -37,6 +37,10 @@ public class PhoneRestController {
     public String getId() {
       return phone.getId();
     }
+    
+    public String getName() {
+      return phone.getName(); 
+    }
 
     public String getImageUrl() {
       return "img/phones/" + phone.getImageId();
