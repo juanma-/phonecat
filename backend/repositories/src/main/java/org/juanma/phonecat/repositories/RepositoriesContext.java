@@ -45,6 +45,8 @@ public class RepositoriesContext {
     //Configures the used database dialect. This allows Hibernate to create SQL that is optimized
     // for the used database.
     jpaProperties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
+    //In pro -> hibernate.hbm2ddl.auto=<empty> 
+    jpaProperties.put("hibernate.hbm2ddl.auto", env.getRequiredProperty("hibernate.hbm2ddl.auto"));
     //If the value of this property is true, Hibernate writes all SQL statements to the console.
     jpaProperties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
     //If the value of this property is true, Hibernate will format the SQL that is written to the

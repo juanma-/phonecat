@@ -1,8 +1,11 @@
 package org.juanma.phonecat.repositories;
 
 
-import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.github.springtestdbunit.annotation.DatabaseSetup;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.inject.Inject;
+
 import org.juanma.phonecat.model.Phone;
 import org.juanma.phonecat.repositories.testutils.DbUnitInMemoryFlywayDbContext;
 import org.junit.Assert;
@@ -16,9 +19,8 @@ import org.springframework.test.context.support.DirtiesContextTestExecutionListe
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
 
 /**
  * Created by Juan Manuel Castillo on 21/03/16.

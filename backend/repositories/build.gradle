@@ -18,7 +18,6 @@ dependencies {
     testCompile 'org.springframework:spring-test:4.1+'
     testCompile 'com.github.springtestdbunit:spring-test-dbunit:1.2+'
     testCompile 'org.flywaydb:flyway-core:3.2.1'
-    //testCompile 'com.zaxxer:HikariCP:2.4+'
     testCompile 'org.dbunit:dbunit:2.4.9'
     testCompile 'com.h2database:h2:1.4+'
 }
